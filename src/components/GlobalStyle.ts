@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
@@ -8,3 +8,5 @@ export const GlobalStyle = createGlobalStyle`
     transition: all 0.50s linear;
   }
 `;
+
+export default GlobalStyle;

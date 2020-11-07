@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '@theme/Themes';
+import { Theme } from '@theme';
 
 function App() {
-  return <ThemeProvider theme={theme}></ThemeProvider>;
+  return <ThemeProvider theme={Theme}></ThemeProvider>;
 }
 
 export default App;

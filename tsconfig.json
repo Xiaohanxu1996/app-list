@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "paths": {
+      "@theme": ["theme"],
+      "@hooks": ["hooks"],
+      "@components": ["components"]
+    },
     "target": "es5",
     "lib": [
       "dom",
