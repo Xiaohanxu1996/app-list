@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { MdSearch } from 'react-icons/md';
+// import { MdSearch } from 'react-icons/md';
 
 export interface Props {
   value?: string;
