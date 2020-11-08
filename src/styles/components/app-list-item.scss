@@ -1,0 +1,57 @@
+.c-applist-item {
+  display: flex;
+  flex-direction: row;
+  padding: map-get($map: $spacing, $key: lg-01) 0;
+  margin: 0 map-get($map: $spacing, $key: lg-01);
+  border-bottom: 1px solid map-get($map: $color, $key: cl-gray-01);
+}
+
+.c-applist-item-ranking {
+  display: flex;
+  align-items: center;
+  width: 1.6rem;
+  font-family: map-get($map: $font, $key: secondary);
+  font-weight: map-get($map: $fontweight, $key: light);
+  color: map-get($map: $color, $key: cl-gray-02);
+  font-size: map-get($map: $fontsize, $key: md-03);
+  margin: map-get($map: $spacing, $key: sm-01);
+}
+.c-applist-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: map-get($map: $spacing, $key: md-01);
+}
+
+.c-applist-item-name {
+  font-family: map-get($map: $font, $key: primary);
+}
+
+.c-applist-item-genre {
+  font-family: map-get($map: $font, $key: primary);
+  color: map-get($map: $color, $key: cl-gray-02);
+  font-size: map-get($map: $fontsize, $key: sm-01);
+  padding: map-get($map: $spacing, $key: sm-01);
+}
+
+.c-applist-item-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: map-get($map: $color, $key: cl-gray-02);
+  font-size: map-get($map: $fontsize, $key: md-01);
+}
+
+.c-applist-item-reviews {
+  padding: map-get($map: $spacing, $key: md-01);
+}
+
+.c-applist-item-image {
+  border-radius: 20%;
+  height: 5rem;
+  padding: map-get($map: $spacing, $key: md-01);
+}
+
+.app-even-ranking {
+  border-radius: 50%;
+}

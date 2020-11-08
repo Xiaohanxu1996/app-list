@@ -1,0 +1,29 @@
+.c-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.c-search-icon-container {
+  display: inline-flex;
+  height: 24px;
+  width: 24px;
+  color: #9d9fb0;
+  font-size: 14px;
+  font-weight: bolder;
+}
+.c-search-icon {
+  height: 100%;
+  width: 100%;
+}
+.c-search-input {
+  height: 24px;
+  width: 100%;
+  border: none;
+  background-color: map-get($map: $color, $key: cl-gray-04);
+  color: #9d9fb0;
+  font-size: map-get($map: $fontsize, $key: sm-02);
+}

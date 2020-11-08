@@ -332,9 +332,15 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        '@theme': path.resolve(__dirname, '../src/theme/'),
         '@hooks': path.resolve(__dirname, '../src/hooks/'),
         '@components': path.resolve(__dirname, '../src/components/'),
+        '@reducers': path.resolve(__dirname, '../src/reducers'),
+        '@store': path.resolve(__dirname, '../src/store'),
+        '@types': path.resolve(__dirname, '../src/types'),
+        '@api': path.resolve(__dirname, '../src/api'),
+        '@views': path.resolve(__dirname, '../src/views'),
+        '@styles': path.resolve(__dirname, '../src/styles'),
+        '@util': path.resolve(__dirname, '../src/util'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -538,7 +544,7 @@ module.exports = function (webpackEnv) {
               // its runtime that would otherwise be processed through "file" loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
-              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/,/\.scss$/],
               options: {
                 name: 'static/media/[name].[hash:8].[ext]',
               },

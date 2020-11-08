@@ -1,0 +1,46 @@
+.c-recommand {
+  border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
+  border-top: 1px solid map-get($map: $color, $key: cl-gray-03);
+  padding: map-get($map: $spacing, $key: md-01);
+}
+.c-recommand-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.c-recommand-container::-webkit-scrollbar {
+  display: none;
+}
+
+.c-recommand-item {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 5rem;
+  margin-right: map-get($map: $spacing, $key: lg-03);
+}
+
+.c-recommand-item-image {
+  border-radius: 20%;
+  width: 5rem;
+  margin: map-get($map: $spacing, $key: md-01);
+}
+
+.c-recommand-item-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: map-get($map: $font, $key: primary);
+  font-size: map-get($map: $fontsize, $key: sm-02);
+  margin: map-get($map: $spacing, $key: md-01);
+}
+
+.c-recommand-item-genre {
+  font-family: map-get($map: $font, $key: primary);
+  color: map-get($map: $color, $key: cl-gray-02);
+  font-size: map-get($map: $fontsize, $key: sm-01);
+  padding: map-get($map: $spacing, $key: sm-01);
+}

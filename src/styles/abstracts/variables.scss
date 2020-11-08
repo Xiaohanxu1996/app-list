@@ -1,0 +1,67 @@
+// Colors
+$color-black: #000;
+$color-gray-01: #858585;
+
+$color: (
+  cl-black: #000,
+  cl-gray-01: #ebebeb,
+  cl-gray-02: #858585,
+  cl-gray-03: #dcdcdc,
+  cl-gray-04: #e2e3e4,
+  cl-orange: #fd9627,
+);
+
+//Font Family
+
+$font: 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
+$font: (
+  primary: "'HelveticaNeue', 'Helvetica', 'Arial', sans-serif",
+  secondary: system-ui,
+);
+
+//Font Sizing
+$fontsize: 1rem;
+$fontsize: (
+  sm-01: $fontsize * 0.75,
+  sm-02: $fontsize * 0.85,
+  md-01: $fontsize * 1,
+  md-02: $fontsize * 1.2,
+  md-03: $fontsize * 1.4,
+  lg-01: $fontsize * 2,
+  lg-02: $fontsize * 3,
+);
+
+//Font weight
+$fontweight: 400;
+$fontweight: (
+  light: 200,
+  normal: 400,
+  bold: 700,
+);
+
+//Spacing
+$spacing: 1rem;
+$spacing: (
+  0: 0,
+  sm-01: (
+    $spacing * 0.125,
+  ),
+  sm-02: (
+    $spacing * 0.25,
+  ),
+  md-01: (
+    $spacing * 0.375,
+  ),
+  md-02: (
+    $spacing * 0.5,
+  ),
+  lg-01: (
+    $spacing * 0.75,
+  ),
+  lg-02: (
+    $spacing * 1,
+  ),
+  lg-03: (
+    $spacing * 1.4,
+  ),
+);

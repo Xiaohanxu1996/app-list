@@ -2,9 +2,15 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@theme": ["theme"],
       "@hooks": ["hooks"],
-      "@components": ["components"]
+      "@components": ["components"],
+      "@reducers": ["reducers"],
+      "@store": ["store"],
+      "@types": ["types"],
+      "@api": ["api"],
+      "@views": ["views"],
+      "@styles": ["styles"],
+      "@util": ["util"]
     },
     "target": "es5",
     "lib": [

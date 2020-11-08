@@ -1,0 +1,57 @@
+//abstracts
+@import 'abstracts/variables.scss';
+
+// base
+@import 'base/img.scss';
+@import 'base/list.scss';
+
+//components
+@import 'components/search.scss';
+@import 'components/app-list-item.scss';
+@import 'components/app-recommand.scss';
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: white;
+    color: #000;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: white;
+    color: #000;
+  }
+}
+
+//overwrite material ui style
+.MuiRating-iconEmpty {
+  color: map-get($map: $color, $key: cl-orange) !important;
+}
+
+.MuiGrid-item {
+  width: 100%;
+}
+
+// overwrite agent style for input placeholder
+input:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}

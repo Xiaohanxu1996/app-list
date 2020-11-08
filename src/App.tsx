@@ -1,9 +1,14 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { Theme } from '@theme';
+import { Store } from '@store';
+import { AppList } from '@views';
 
 function App() {
-  return <ThemeProvider theme={Theme}></ThemeProvider>;
+  console.log(process.env);
+  return (
+    <Store>
+      <AppList />
+    </Store>
+  );
 }
 
 export default App;
