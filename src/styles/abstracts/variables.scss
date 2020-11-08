@@ -65,3 +65,12 @@ $spacing: (
     $spacing * 1.4,
   ),
 );
+
+// border radius
+
+$borderradius: 0.2rem;
+$borderradius: (
+  sm: 0.2rem,
+  md: 20%,
+  lg: 50%,
+);

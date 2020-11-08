@@ -17,8 +17,10 @@ const RecommandItem: FunctionComponent<recommandInfoType> = (props) => {
         src={imageUrl}
         alt={name}
       />
-      <div className={classnames('c-recommand-item-name')}>{name}</div>
-      <div className={classnames('c-recommand-item-genre')}>{genre}</div>
+      <div className={classnames('c-recommand-item-info')}>
+        <div className={classnames('c-recommand-item-name')}>{name}</div>
+        <div className={classnames('c-recommand-item-genre')}>{genre}</div>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 .c-applist-item {
   display: flex;
   flex-direction: row;
-  padding: map-get($map: $spacing, $key: lg-01) 0;
-  margin: 0 map-get($map: $spacing, $key: lg-01);
+  padding: map-get($map: $spacing, $key: lg-01)
+    map-get($map: $spacing, $key: md-02);
   border-bottom: 1px solid map-get($map: $color, $key: cl-gray-01);
 }
 
@@ -47,11 +47,11 @@
 }
 
 .c-applist-item-image {
-  border-radius: 20%;
+  border-radius: map-get($map: $borderradius, $key: md);
   height: 5rem;
   padding: map-get($map: $spacing, $key: md-01);
 }
 
 .app-even-ranking {
-  border-radius: 50%;
+  border-radius: map-get($map: $borderradius, $key: lg);
 }

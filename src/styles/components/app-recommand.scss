@@ -1,7 +1,12 @@
 .c-recommand {
   border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
   border-top: 1px solid map-get($map: $color, $key: cl-gray-03);
-  padding: map-get($map: $spacing, $key: md-01);
+  padding: map-get($map: $spacing, $key: lg-02) 0;
+}
+.c-recommand-header {
+  font-family: map-get($map: $font, $key: secondary);
+  margin-bottom: map-get($map: $spacing, $key: lg-01);
+  margin-left: map-get($map: $spacing, $key: md-02);
 }
 .c-recommand-container {
   display: flex;
@@ -24,23 +29,24 @@
 }
 
 .c-recommand-item-image {
-  border-radius: 20%;
+  border-radius: map-get($map: $borderradius, $key: md);
   width: 5rem;
-  margin: map-get($map: $spacing, $key: md-01);
+  margin: map-get($map: $spacing, $key: md-02);
 }
 
+.c-recommand-item-info {
+  margin: 0 map-get($map: $spacing, $key: md-02);
+}
 .c-recommand-item-name {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-family: map-get($map: $font, $key: primary);
   font-size: map-get($map: $fontsize, $key: sm-02);
-  margin: map-get($map: $spacing, $key: md-01);
 }
 
 .c-recommand-item-genre {
   font-family: map-get($map: $font, $key: primary);
-  color: map-get($map: $color, $key: cl-gray-02);
   font-size: map-get($map: $fontsize, $key: sm-01);
-  padding: map-get($map: $spacing, $key: sm-01);
+  color: map-get($map: $color, $key: cl-gray-02);
 }

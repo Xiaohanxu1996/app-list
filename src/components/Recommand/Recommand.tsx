@@ -7,7 +7,7 @@ const Recommand = () => {
   return (
     <>
       <div className={classnames('c-recommand')}>
-        <div>推介</div>
+        <div className={classnames('c-recommand-header')}>推介</div>
         <div className={classnames('c-recommand-container')}>
           {results.map((app) => {
             const { name, genres, artworkUrl100: imageUrl } = app;
