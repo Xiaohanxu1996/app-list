@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   min-width: 1.6rem;
-  font-family: map-get($map: $font, $key: secondary);
+  font-family: map-get($map: $font, $key: primary);
   font-weight: map-get($map: $fontweight, $key: light);
   color: map-get($map: $color, $key: cl-gray-02);
   font-size: map-get($map: $fontsize, $key: md-03);

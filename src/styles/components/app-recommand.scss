@@ -4,7 +4,7 @@
   padding: map-get($map: $spacing, $key: lg-02) 0;
 }
 .c-recommand-header {
-  font-family: map-get($map: $font, $key: secondary);
+  font-family: map-get($map: $font, $key: primary);
   margin-bottom: map-get($map: $spacing, $key: lg-01);
   margin-left: map-get($map: $spacing, $key: md-02);
 }

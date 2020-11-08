@@ -15,8 +15,8 @@ $color: (
 
 $font: 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
 $font: (
-  primary: "'HelveticaNeue', 'Helvetica', 'Arial', sans-serif",
-  secondary: system-ui,
+  primary: system-ui,
+  secondary: "'HelveticaNeue', 'Helvetica', 'Arial', sans-serif",
 );
 
 //Font Sizing
