@@ -9,7 +9,7 @@
 .c-applist-item-ranking {
   display: flex;
   align-items: center;
-  width: 1.6rem;
+  min-width: 1.6rem;
   font-family: map-get($map: $font, $key: secondary);
   font-weight: map-get($map: $fontweight, $key: light);
   color: map-get($map: $color, $key: cl-gray-02);
@@ -31,7 +31,7 @@
   font-family: map-get($map: $font, $key: primary);
   color: map-get($map: $color, $key: cl-gray-02);
   font-size: map-get($map: $fontsize, $key: sm-01);
-  padding: map-get($map: $spacing, $key: sm-01);
+  padding: map-get($map: $spacing, $key: sm-01) 0;
 }
 
 .c-applist-item-rating {
@@ -39,11 +39,11 @@
   flex-direction: row;
   align-items: center;
   color: map-get($map: $color, $key: cl-gray-02);
-  font-size: map-get($map: $fontsize, $key: md-01);
+  font-size: map-get($map: $fontsize, $key: sm-02);
 }
 
 .c-applist-item-reviews {
-  padding: map-get($map: $spacing, $key: md-01);
+  padding-left: map-get($map: $spacing, $key: md-01);
 }
 
 .c-applist-item-image {
