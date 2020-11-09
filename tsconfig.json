@@ -4,6 +4,7 @@
     "paths": {
       "@hooks": ["hooks"],
       "@components": ["components"],
+      "@constants": ["constants"],
       "@reducers": ["reducers"],
       "@store": ["store"],
       "@types": ["types"],

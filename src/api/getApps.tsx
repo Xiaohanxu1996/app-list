@@ -1,14 +1,35 @@
-import axios from 'axios';
 const { REACT_APP_APIURL: apiURL } = process.env;
 
-const getTopFreeApps = ({ page, size }: { page: number; size: number }) => {
+const getTopFreeApps = async ({
+  page,
+  size,
+}: {
+  page: number;
+  size: number;
+}) => {
   const total = page * size;
-  return axios.get(`${apiURL}/top-free/all/${total}/explicit.json`);
+  const response = await fetch(`${apiURL}/top-free/all/${total}/explicit.json`);
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  const body = await response.json();
+  return body;
 };
 
-const getTopGrossApps = ({ page, size }: { page: number; size: number }) => {
+const getTopGrossApps = async ({
+  page,
+  size,
+}: {
+  page: number;
+  size: number;
+}) => {
   const total = page * size;
-  return axios.get(`${apiURL}/top-free/all/${total}/explicit.json`);
+  const response = await fetch(`${apiURL}/top-free/all/${total}/explicit.json`);
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  const body = await response.json();
+  return body;
 };
 
 export { getTopFreeApps, getTopGrossApps };

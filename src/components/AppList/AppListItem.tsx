@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Rating } from '@material-ui/lab';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import classnames from 'classnames';
+import { getAppDetail } from '@api';
 import { isEven } from '@util';
 
 interface appInfoType {
@@ -13,25 +14,50 @@ interface appInfoType {
 }
 
 const AppListItem: FunctionComponent<appInfoType> = (props) => {
-  const { name, genre, imageUrl, ranking } = props;
+  const { name, genre, imageUrl, ranking, id } = props;
+  const [appInfo, setAppInfo] = useState({
+    name,
+    genre,
+    ranking,
+    imageUrl,
+    rating: 0,
+    reviews: 0,
+  });
+  useEffect(() => {
+    async function fetchData(appId: string) {
+      const response = await getAppDetail({ appId });
+      const { results } = response;
+      const { averageUserRating, userRatingCount } = results[0];
+      setAppInfo({
+        ...appInfo,
+        rating: averageUserRating,
+        reviews: userRatingCount,
+      });
+    }
+    fetchData(id);
+  });
   return (
     <li className={classnames('c-applist-item')}>
-      <div className={classnames('c-applist-item-ranking')}>{ranking}</div>
+      <div className={classnames('c-applist-item-ranking')}>
+        {appInfo.ranking}
+      </div>
       <img
         className={classnames('c-applist-item-image', {
           'app-even-ranking': isEven(ranking),
         })}
-        src={imageUrl}
-        alt={name}
+        src={appInfo.imageUrl}
+        alt={appInfo.name}
       ></img>
       <div className={classnames('c-applist-item-info')}>
-        <div className={classnames('c-applist-item-name')}>{name}</div>
-        <div className={classnames('c-applist-item-genre')}>{genre}</div>
+        <div className={classnames('c-applist-item-name')}>{appInfo.name}</div>
+        <div className={classnames('c-applist-item-genre')}>
+          {appInfo.genre}
+        </div>
         <div className={classnames('c-applist-item-rating')}>
           <Rating
             name="read-only"
             size="small"
-            value={3}
+            value={appInfo.rating}
             readOnly
             emptyIcon={
               <StarBorderIcon
@@ -42,7 +68,7 @@ const AppListItem: FunctionComponent<appInfoType> = (props) => {
           />
           <div
             className={classnames('c-applist-item-reviews')}
-          >{`(${70})`}</div>
+          >{`(${appInfo.reviews})`}</div>
         </div>
       </div>
     </li>
