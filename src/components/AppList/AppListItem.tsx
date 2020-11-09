@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { isEven } from '@util';
 
 interface appInfoType {
+  id: string;
   name: string;
   genre: string;
   imageUrl: string;

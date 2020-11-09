@@ -24,13 +24,13 @@
   display: inline-flex;
   flex-direction: column;
   flex: 0 0 auto;
-  width: 5rem;
+  width: 5.4rem;
   margin-right: map-get($map: $spacing, $key: lg-03);
 }
 
 .c-recommand-item-image {
   border-radius: map-get($map: $borderradius, $key: md);
-  width: 5rem;
+  width: 5.4rem;
   margin: map-get($map: $spacing, $key: md-02);
 }
 

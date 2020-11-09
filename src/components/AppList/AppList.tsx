@@ -9,10 +9,11 @@ const AppList = () => {
     <ul className={classnames('c-applist')}>
       <Grid container>
         {results.map((app, index) => {
-          const { name, genres, artworkUrl100: imageUrl } = app;
+          const { id, name, genres, artworkUrl100: imageUrl } = app;
           const ranking = index + 1;
           const genre = genres[0].name;
           const appInfo = {
+            id,
             name,
             genre,
             ranking,
