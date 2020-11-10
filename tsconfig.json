@@ -11,7 +11,8 @@
       "@api": ["api"],
       "@views": ["views"],
       "@styles": ["styles"],
-      "@util": ["util"]
+      "@util": ["util"],
+      "@action": ["action"]
     },
     "target": "es5",
     "lib": [
