@@ -13,12 +13,14 @@ const Search = ({ handler, value = '' }: Props) => {
       {/* <div className={classnames('c-search-icon-container')}>
         <MdSearch className={classnames('c-search-icon')} />
       </div> */}
-      <input
-        className={classnames('c-search-input')}
-        onChange={handler}
-        value={value}
-        placeholder={'搜索'}
-      />
+      <div className={classnames('c-search-input-container')}>
+        <input
+          className={classnames('c-search-input')}
+          onChange={handler}
+          value={value}
+          placeholder={'搜索'}
+        />
+      </div>
     </div>
   );
 };

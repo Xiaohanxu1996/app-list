@@ -1,11 +1,15 @@
 .c-search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: auto;
-  margin: 0 map-get($map: $spacing, $key: md-02)
-    map-get($map: $spacing, $key: md-02);
+  height: auto;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
 }
 
 .c-search-icon-container {
@@ -20,10 +24,19 @@
   height: 100%;
   width: 100%;
 }
+
+.c-search-input-container {
+  width: 100%;
+  box-sizing: content-box;
+  margin: map-get($map: $spacing, $key: md-02)
+    map-get($map: $spacing, $key: md-02);
+}
+
 .c-search-input {
   height: 24px;
   width: 100%;
   border: none;
+  padding: 0;
   border-radius: 0.25rem;
   background-color: map-get($map: $color, $key: cl-gray-04);
   color: #9d9fb0;

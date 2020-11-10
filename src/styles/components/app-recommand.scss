@@ -1,6 +1,6 @@
 .c-recommand {
   border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
-  border-top: 1px solid map-get($map: $color, $key: cl-gray-03);
+  margin-top: 3rem;
   padding: map-get($map: $spacing, $key: lg-02) 0;
 }
 .c-recommand-header {
