@@ -1,2 +1,2 @@
 export { setFreeApp } from './setFreeApp';
-export { setRecommandApp } from './setRecommandApp';
+export { setGrossingApp } from './setGrossingApp';

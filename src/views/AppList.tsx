@@ -1,47 +1,34 @@
 import React, { FunctionComponent, useContext, useEffect } from 'react';
 import { Recommand, AppListComponent, Search } from '@components';
 import { Context } from '@store';
-import { getTopFreeApps, getTopGrossApps } from '@api';
-import { setFreeApp, setRecommandApp } from '@action';
+import { getApps } from '@api';
+import { setFreeApp, setGrossingApp } from '@action';
+import { appInfoParser } from '@util';
 
 const AppList: FunctionComponent = () => {
   const { state, dispatch } = useContext(Context);
   const { topGrowApps, topFreeApps } = state;
   useEffect(() => {
     const fetchTopFreeApps = async () => {
-      const response = await getTopFreeApps({ page: 10, size: 10 });
-      const { results } = response;
-      const parsedResults = results.map((appRawData: any, index: number) => {
-        const { id, name, genres, artworkUrl100: imageUrl } = appRawData;
-        const genre = genres[0];
-        const ranking = index + 1;
-        return {
-          id,
-          name,
-          genre: genre.name,
-          imageUrl,
-          ranking,
-        };
+      const response = await getApps({
+        page: 1,
+        size: 10,
+        type: 'top-free',
       });
+      const { results } = response;
+      const parsedResults = appInfoParser(results);
       dispatch(setFreeApp(parsedResults));
     };
 
     const fetchtopGrowApps = async () => {
-      const response = await getTopGrossApps({ page: 1, size: 10 });
-      const { results } = response;
-      const parsedResults = results.map((appRawData: any, index: number) => {
-        const { id, name, genres, artworkUrl100: imageUrl } = appRawData;
-        const genre = genres[0];
-        const ranking = index + 1;
-        return {
-          id,
-          name,
-          genre: genre.name,
-          imageUrl,
-          ranking,
-        };
+      const response = await getApps({
+        page: 1,
+        size: 10,
+        type: 'top-grossing',
       });
-      dispatch(setRecommandApp(parsedResults));
+      const { results } = response;
+      const parsedResults = appInfoParser(results);
+      dispatch(setGrossingApp(parsedResults));
     };
     fetchtopGrowApps();
     fetchTopFreeApps();

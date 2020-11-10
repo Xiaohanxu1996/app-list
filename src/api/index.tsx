@@ -1,2 +1,2 @@
-export { getTopFreeApps, getTopGrossApps } from './getApps';
+export { getApps } from './getApps';
 export { getAppDetail } from './getAppDetail';
