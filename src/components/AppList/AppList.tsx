@@ -60,9 +60,10 @@ const AppList = () => {
             <Grid key={id} item sm={12} md={4}>
               <AppListItem
                 ref={
-                  topFreeApps[topFreeApps.length - 1].id === app.id
+                  topFreeApps[topFreeApps.length - 3].id === app.id
                     ? lastItem
                     : null
+                  //  load next page when last 3th item is visible
                 }
                 {...appInfo}
               />
