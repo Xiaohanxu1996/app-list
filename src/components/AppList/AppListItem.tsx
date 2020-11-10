@@ -21,14 +21,14 @@ const AppListItem: FunctionComponent<AppInfoType> = (props) => {
       const response = await getAppDetail({ appId });
       const { results } = response;
       const { averageUserRating, userRatingCount } = results[0];
-      setAppInfo({
-        ...appInfo,
+      setAppInfo((prevState) => ({
+        ...prevState,
         rating: averageUserRating,
         reviews: userRatingCount,
-      });
+      }));
     };
     fetchData(id);
-  }, [id, appInfo]);
+  }, [id]);
   return (
     <li className={classnames('c-applist-item')}>
       <div className={classnames('c-applist-item-ranking')}>

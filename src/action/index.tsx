@@ -1,2 +1,3 @@
 export { setFreeApp } from './setFreeApp';
 export { setGrossingApp } from './setGrossingApp';
+export { setLoaded } from './setLoaded';

@@ -5,7 +5,7 @@ import { Reducer } from '@reducers';
 const initialState = {
   topGrowApps: [],
   topFreeApps: [],
-  loading: false,
+  loading: true,
   searchTerm: '',
   theme: Theme.Dark,
 };

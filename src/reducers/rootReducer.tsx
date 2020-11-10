@@ -1,5 +1,5 @@
 import { ActionType, StoreStateType } from '@types';
-import { SET_TOP_FREE_APP, SET_RECOMMAND_APP } from '@constants';
+import { SET_TOP_FREE_APP, SET_RECOMMAND_APP, SET_LOADED } from '@constants';
 
 const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
   switch (action.type) {
@@ -9,6 +9,20 @@ const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
         ...state,
         topFreeApps: data,
       };
+    }
+    case SET_LOADED: {
+      const { topGrowApps, topFreeApps } = state;
+      if (topFreeApps.length !== 0 && topGrowApps.length !== 0) {
+        return {
+          ...state,
+          loading: false,
+        };
+      } else {
+        return {
+          ...state,
+          loading: true,
+        };
+      }
     }
     case SET_RECOMMAND_APP: {
       const { data } = action;

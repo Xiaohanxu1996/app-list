@@ -1,13 +1,20 @@
 import React, { FunctionComponent, useContext, useEffect } from 'react';
-import { Recommand, AppListComponent, Search } from '@components';
+import { Recommand, AppListComponent, Search, Loading } from '@components';
 import { Context } from '@store';
 import { getApps } from '@api';
-import { setFreeApp, setGrossingApp } from '@action';
+import { setFreeApp, setGrossingApp, setLoaded } from '@action';
 import { appInfoParser } from '@util';
 
 const AppList: FunctionComponent = () => {
   const { state, dispatch } = useContext(Context);
-  const { topGrowApps, topFreeApps } = state;
+  const { topGrowApps, topFreeApps, loading } = state;
+  useEffect(() => {
+    console.log(topFreeApps, topGrowApps);
+    if (topGrowApps.length !== 0 && topFreeApps.length !== 0) {
+      dispatch(setLoaded());
+    }
+  }, [topGrowApps, topFreeApps, dispatch]);
+
   useEffect(() => {
     const fetchTopFreeApps = async () => {
       const response = await getApps({
@@ -19,7 +26,6 @@ const AppList: FunctionComponent = () => {
       const parsedResults = appInfoParser(results);
       dispatch(setFreeApp(parsedResults));
     };
-
     const fetchtopGrowApps = async () => {
       const response = await getApps({
         page: 1,
@@ -36,8 +42,14 @@ const AppList: FunctionComponent = () => {
   return (
     <>
       <Search handler={() => {}} />
-      <Recommand topGrowApps={topGrowApps} />
-      <AppListComponent topFreeApps={topFreeApps} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Recommand topGrowApps={topGrowApps} />
+          <AppListComponent topFreeApps={topFreeApps} />
+        </>
+      )}
     </>
   );
 };

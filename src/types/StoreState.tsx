@@ -16,6 +16,10 @@ interface ActionType {
   data: AppInfoType[];
 }
 
+interface ActionWithOutDataType {
+  type: string;
+}
+
 interface AppInfoType {
   id: string;
   name: string;
@@ -25,4 +29,4 @@ interface AppInfoType {
 }
 
 export { Theme };
-export type { StoreStateType, ActionType, AppInfoType };
+export type { StoreStateType, ActionType, AppInfoType, ActionWithOutDataType };
