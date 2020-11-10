@@ -1,46 +1,18 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Recommand, AppListComponent, Search, Loading } from '@components';
 import { Context } from '@store';
 import { getApps } from '@api';
-import { setFreeApp, setGrossingApp, setLoaded, loadMore } from '@action';
+import { setFreeApp, setGrossingApp, setLoaded } from '@action';
 import { appInfoParser } from '@util';
 
-const AppList: FunctionComponent = () => {
-  const [isBottom, setIsBottom] = useState(false);
+const AppList: React.FC = () => {
   const { state, dispatch } = useContext(Context);
-  const { topGrowApps, topFreeApps, loading, page } = state;
-  const handleScroll = () => {
-    const scrollTop =
-      (document.documentElement && document.documentElement.scrollTop) ||
-      document.body.scrollTop;
-    const scrollHeight =
-      (document.documentElement && document.documentElement.scrollHeight) ||
-      document.body.scrollHeight;
-    if (scrollTop + window.innerHeight + 10 >= scrollHeight) {
-      setIsBottom(true);
-    }
-  };
+  const { topGrowApps, loading, page } = state;
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (isBottom) {
-      dispatch(loadMore());
-      setIsBottom(false);
-    }
-  }, [isBottom, dispatch]);
-  useEffect(() => {
-    if (topGrowApps.length !== 0 && topFreeApps.length !== 0) {
+    if (topGrowApps.length !== 0) {
       dispatch(setLoaded());
     }
-  }, [topGrowApps, topFreeApps, dispatch]);
+  }, [topGrowApps, dispatch]);
 
   useEffect(() => {
     const fetchTopFreeApps = async () => {
@@ -79,7 +51,7 @@ const AppList: FunctionComponent = () => {
       ) : (
         <>
           <Recommand topGrowApps={topGrowApps} />
-          <AppListComponent topFreeApps={topFreeApps} />
+          <AppListComponent />
         </>
       )}
     </>
