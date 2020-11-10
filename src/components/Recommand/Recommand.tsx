@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classnames from 'classnames';
+import { Context } from '@store';
 import RecommandItem from './RecommandItem';
-import { AppInfoType } from '@types';
 
-const Recommand = ({ topGrowApps }: { topGrowApps: AppInfoType[] }) => {
+const Recommand = () => {
+  const { state } = useContext(Context);
+  const { topGrowApps } = state;
+
   return (
     <>
       <div className={classnames('c-recommand')}>

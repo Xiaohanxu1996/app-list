@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import classnames from 'classnames';
 import { Context } from '@store';
 import { getApps } from '@api';
-import { setFreeApp, setLoaded, loadMore } from '@action';
+import { setFreeApp, loadMore } from '@action';
 import { appInfoParser } from '@util';
 import { useVisibility } from '@hooks';
 import AppListItem from './AppListItem';
@@ -21,12 +21,6 @@ const AppList = () => {
     },
     [listSize]
   );
-
-  useEffect(() => {
-    if (topFreeApps.length !== 0) {
-      dispatch(setLoaded());
-    }
-  }, [topFreeApps, dispatch]);
 
   useEffect(() => {
     const fetchTopFreeApps = async () => {
