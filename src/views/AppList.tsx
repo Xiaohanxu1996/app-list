@@ -6,7 +6,7 @@ import { setFreeApp, setRecommandApp } from '@action';
 
 const AppList: FunctionComponent = () => {
   const { state, dispatch } = useContext(Context);
-  const { topGrowApps, topFreeApps, loading } = state;
+  const { topGrowApps, topFreeApps } = state;
   useEffect(() => {
     const fetchTopFreeApps = async () => {
       const response = await getTopFreeApps({ page: 10, size: 10 });
@@ -45,7 +45,7 @@ const AppList: FunctionComponent = () => {
     };
     fetchtopGrowApps();
     fetchTopFreeApps();
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <Search handler={() => {}} />
