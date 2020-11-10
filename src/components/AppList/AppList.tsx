@@ -4,13 +4,12 @@ import classnames from 'classnames';
 import AppListItem from './AppListItem';
 import { AppInfoType } from '@types';
 
-const AppList = ({ popularApps }: { popularApps: AppInfoType[] }) => {
+const AppList = ({ topFreeApps }: { topFreeApps: AppInfoType[] }) => {
   return (
     <ul className={classnames('c-applist')}>
       <Grid container>
-        {popularApps.map((app, index) => {
-          const { id, name, genre, imageUrl } = app;
-          const ranking = index + 1;
+        {topFreeApps.map((app) => {
+          const { id, name, genre, imageUrl, ranking } = app;
           const appInfo = {
             id,
             name,
@@ -19,7 +18,7 @@ const AppList = ({ popularApps }: { popularApps: AppInfoType[] }) => {
             imageUrl,
           };
           return (
-            <Grid item sm={12} md={4}>
+            <Grid key={id} item sm={12} md={4}>
               <AppListItem {...appInfo} />
             </Grid>
           );

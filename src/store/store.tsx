@@ -3,7 +3,7 @@ import { StoreStateType, Theme } from '@types';
 import { Reducer } from '@reducers';
 
 const initialState = {
-  popularApps: [],
+  topGrowApps: [],
   topFreeApps: [],
   loading: false,
   searchTerm: '',

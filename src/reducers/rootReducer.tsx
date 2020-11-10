@@ -4,10 +4,18 @@ import { SET_TOP_FREE_APP, SET_RECOMMAND_APP } from '@constants';
 const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
   switch (action.type) {
     case SET_TOP_FREE_APP: {
-      return state;
+      const { data } = action;
+      return {
+        ...state,
+        topFreeApps: data,
+      };
     }
     case SET_RECOMMAND_APP: {
-      return state;
+      const { data } = action;
+      return {
+        ...state,
+        topGrowApps: data,
+      };
     }
     default:
       return state;

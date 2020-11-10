@@ -28,7 +28,7 @@ const AppListItem: FunctionComponent<AppInfoType> = (props) => {
       });
     };
     fetchData(id);
-  });
+  }, []);
   return (
     <li className={classnames('c-applist-item')}>
       <div className={classnames('c-applist-item-ranking')}>

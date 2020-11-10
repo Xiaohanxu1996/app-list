@@ -5,8 +5,8 @@ const getAppDetail = async ({ appId }: { appId: string }) => {
   if (!response.ok) {
     throw new Error(response.statusText);
   }
-  const body = await response.json();
-  return body;
+  const data = await response.json();
+  return data;
 };
 
 export { getAppDetail };

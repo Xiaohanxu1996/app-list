@@ -8,13 +8,12 @@ const getTopFreeApps = async ({
   size: number;
 }) => {
   const total = page * size;
-  console.log(total);
   const response = await fetch(`${apiURL}/top-free/all/${total}/explicit.json`);
   if (!response.ok) {
     throw new Error(response.statusText);
   }
-  const body = await response.json();
-  return body;
+  const data = await response.json();
+  return data.feed;
 };
 
 const getTopGrossApps = async ({
@@ -25,12 +24,14 @@ const getTopGrossApps = async ({
   size: number;
 }) => {
   const total = page * size;
-  const response = await fetch(`${apiURL}/top-free/all/${total}/explicit.json`);
+  const response = await fetch(
+    `${apiURL}/top-grossing/all/${total}/explicit.json`
+  );
   if (!response.ok) {
     throw new Error(response.statusText);
   }
-  const body = await response.json();
-  return body;
+  const data = await response.json();
+  return data.feed;
 };
 
 export { getTopFreeApps, getTopGrossApps };

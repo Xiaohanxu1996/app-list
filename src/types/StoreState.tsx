@@ -4,7 +4,7 @@ enum Theme {
 }
 
 interface StoreStateType {
-  popularApps: AppInfoType[];
+  topGrowApps: AppInfoType[];
   topFreeApps: AppInfoType[];
   loading: boolean;
   searchTerm: string;
@@ -13,7 +13,7 @@ interface StoreStateType {
 
 interface ActionType {
   type: string;
-  data?: object[];
+  data: AppInfoType[];
 }
 
 interface AppInfoType {
