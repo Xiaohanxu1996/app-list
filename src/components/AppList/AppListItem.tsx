@@ -4,16 +4,9 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import classnames from 'classnames';
 import { getAppDetail } from '@api';
 import { isEven } from '@util';
+import { AppInfoType } from '@types';
 
-interface appInfoType {
-  id: string;
-  name: string;
-  genre: string;
-  imageUrl: string;
-  ranking: number;
-}
-
-const AppListItem: FunctionComponent<appInfoType> = (props) => {
+const AppListItem: FunctionComponent<AppInfoType> = (props) => {
   const { name, genre, imageUrl, ranking, id } = props;
   const [appInfo, setAppInfo] = useState({
     name,
@@ -24,7 +17,7 @@ const AppListItem: FunctionComponent<appInfoType> = (props) => {
     reviews: 0,
   });
   useEffect(() => {
-    async function fetchData(appId: string) {
+    const fetchData = async (appId: string) => {
       const response = await getAppDetail({ appId });
       const { results } = response;
       const { averageUserRating, userRatingCount } = results[0];
@@ -33,7 +26,7 @@ const AppListItem: FunctionComponent<appInfoType> = (props) => {
         rating: averageUserRating,
         reviews: userRatingCount,
       });
-    }
+    };
     fetchData(id);
   });
   return (

@@ -2,16 +2,15 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import classnames from 'classnames';
 import AppListItem from './AppListItem';
-import results from './mockdata.json';
+import { AppInfoType } from '@types';
 
-const AppList = () => {
+const AppList = ({ popularApps }: { popularApps: AppInfoType[] }) => {
   return (
     <ul className={classnames('c-applist')}>
       <Grid container>
-        {results.map((app, index) => {
-          const { id, name, genres, artworkUrl100: imageUrl } = app;
+        {popularApps.map((app, index) => {
+          const { id, name, genre, imageUrl } = app;
           const ranking = index + 1;
-          const genre = genres[0].name;
           const appInfo = {
             id,
             name,

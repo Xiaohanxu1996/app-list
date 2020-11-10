@@ -1,17 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 import RecommandItem from './RecommandItem';
-import results from './mockdata.json';
+import { AppInfoType } from '@types';
 
-const Recommand = () => {
+const Recommand = ({ topFreeApps }: { topFreeApps: AppInfoType[] }) => {
   return (
     <>
       <div className={classnames('c-recommand')}>
         <div className={classnames('c-recommand-header')}>推介</div>
         <div className={classnames('c-recommand-container')}>
-          {results.map((app) => {
-            const { name, genres, artworkUrl100: imageUrl } = app;
-            const genre = genres[0].name;
+          {topFreeApps.map((app) => {
+            const { name, genre, imageUrl } = app;
             const appInfo = {
               name,
               genre,

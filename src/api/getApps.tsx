@@ -8,6 +8,7 @@ const getTopFreeApps = async ({
   size: number;
 }) => {
   const total = page * size;
+  console.log(total);
   const response = await fetch(`${apiURL}/top-free/all/${total}/explicit.json`);
   if (!response.ok) {
     throw new Error(response.statusText);

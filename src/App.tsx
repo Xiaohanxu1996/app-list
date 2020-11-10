@@ -3,7 +3,6 @@ import { Store } from '@store';
 import { AppList } from '@views';
 
 function App() {
-  console.log(process.env);
   return (
     <Store>
       <AppList />
