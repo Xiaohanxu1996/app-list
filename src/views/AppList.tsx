@@ -21,7 +21,7 @@ const AppList: FunctionComponent = () => {
     const scrollHeight =
       (document.documentElement && document.documentElement.scrollHeight) ||
       document.body.scrollHeight;
-    if (scrollTop + window.innerHeight + 50 >= scrollHeight) {
+    if (scrollTop + window.innerHeight + 10 >= scrollHeight) {
       setIsBottom(true);
     }
   };
