@@ -8,6 +8,7 @@ interface StoreStateType {
   topFreeApps: AppInfoType[];
   loading: boolean;
   searchTerm: string;
+  page: number;
   theme: Theme;
 }
 

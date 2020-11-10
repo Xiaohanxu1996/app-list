@@ -6,6 +6,7 @@ const initialState = {
   topGrowApps: [],
   topFreeApps: [],
   loading: true,
+  page: 1,
   searchTerm: '',
   theme: Theme.Dark,
 };

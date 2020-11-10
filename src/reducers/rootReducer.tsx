@@ -1,5 +1,10 @@
 import { ActionType, StoreStateType } from '@types';
-import { SET_TOP_FREE_APP, SET_RECOMMAND_APP, SET_LOADED } from '@constants';
+import {
+  SET_TOP_FREE_APP,
+  SET_RECOMMAND_APP,
+  SET_LOADED,
+  LOAD_MORE,
+} from '@constants';
 
 const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
   switch (action.type) {
@@ -23,6 +28,13 @@ const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
           loading: true,
         };
       }
+    }
+    case LOAD_MORE: {
+      const { page } = state;
+      return {
+        ...state,
+        page: page + 1,
+      };
     }
     case SET_RECOMMAND_APP: {
       const { data } = action;
