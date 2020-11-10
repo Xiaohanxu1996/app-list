@@ -1,4 +1,5 @@
 import { AppInfoType } from '@types';
+
 const appInfoParser = (apps: object[]): AppInfoType[] => {
   const parsedData = apps.map((app: any, index: number) => {
     const { id, name, genres, artworkUrl100: imageUrl } = app;

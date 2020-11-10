@@ -8,8 +8,8 @@ import { appInfoParser } from '@util';
 const AppList: FunctionComponent = () => {
   const { state, dispatch } = useContext(Context);
   const { topGrowApps, topFreeApps, loading } = state;
+
   useEffect(() => {
-    console.log(topFreeApps, topGrowApps);
     if (topGrowApps.length !== 0 && topFreeApps.length !== 0) {
       dispatch(setLoaded());
     }
@@ -26,6 +26,7 @@ const AppList: FunctionComponent = () => {
       const parsedResults = appInfoParser(results);
       dispatch(setFreeApp(parsedResults));
     };
+
     const fetchtopGrowApps = async () => {
       const response = await getApps({
         page: 1,
@@ -36,6 +37,7 @@ const AppList: FunctionComponent = () => {
       const parsedResults = appInfoParser(results);
       dispatch(setGrossingApp(parsedResults));
     };
+
     fetchtopGrowApps();
     fetchTopFreeApps();
   }, [dispatch]);
