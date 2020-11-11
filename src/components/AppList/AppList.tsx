@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Fuse from 'fuse.js';
 import { Grid } from '@material-ui/core';
 import classnames from 'classnames';
 import { Context } from '@store';
@@ -10,8 +11,9 @@ import AppListItem from './AppListItem';
 
 const AppList = () => {
   const { state, dispatch } = useContext(Context);
-  const { topFreeApps, page } = state;
+  const { topFreeApps, page, searchTerm } = state;
   const [listSize, setListSize] = useState(0);
+  const [filteredResult, setfilteredResult] = useState(topFreeApps);
 
   const lastItem = useVisibility(
     (visible) => {
@@ -21,6 +23,20 @@ const AppList = () => {
     },
     [listSize]
   );
+
+  useEffect(() => {
+    if (searchTerm !== '') {
+      const fuse = new Fuse(topFreeApps, { keys: ['name', 'genre'] });
+      const filteredResults = fuse.search(searchTerm);
+      const parsedResults = filteredResults.map((app) => {
+        const { item } = app;
+        return item;
+      });
+      setfilteredResult(parsedResults);
+    } else {
+      setfilteredResult(topFreeApps);
+    }
+  }, [topFreeApps, searchTerm]);
 
   useEffect(() => {
     const fetchTopFreeApps = async () => {
@@ -41,23 +57,24 @@ const AppList = () => {
   return (
     <ul className={classnames('c-applist')}>
       <Grid container>
-        {topFreeApps.map((app) => {
-          const { id, name, genre, imageUrl, ranking } = app;
+        {filteredResult.map((app, index) => {
+          const { id, name, genre, imageUrl } = app;
+          const ranking = index + 1;
           const appInfo = {
             id,
             name,
             genre,
-            ranking,
             imageUrl,
+            ranking,
           };
           return (
-            <Grid key={id} item sm={12} md={4}>
+            <Grid key={`${id}-${ranking}`} item sm={12} md={4}>
               <AppListItem
                 ref={
-                  topFreeApps[topFreeApps.length - 3].id === app.id
+                  topFreeApps[topFreeApps.length - 1].id === app.id
                     ? lastItem
                     : null
-                  //  load next page when last 3th item is visible
+                  //  load next page when last item is visible
                 }
                 {...appInfo}
               />

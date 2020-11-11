@@ -1,13 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, ChangeEvent } from 'react';
 import { Recommand, AppListComponent, Search, Loading } from '@components';
 import { Context } from '@store';
 import { getApps } from '@api';
-import { setLoaded, setGrossingApp, setFreeApp } from '@action';
+import { setLoaded, setGrossingApp, setFreeApp, setSearchTerm } from '@action';
 import { appInfoParser } from '@util';
 
 const AppList: React.FC = () => {
   const { state, dispatch } = useContext(Context);
-  const { topFreeApps, topGrowApps, loading, page } = state;
+  const { topFreeApps, topGrowApps, loading, page, searchTerm } = state;
 
   useEffect(() => {
     if (topFreeApps.length !== 0 && topGrowApps.length !== 0) {
@@ -45,9 +45,13 @@ const AppList: React.FC = () => {
     fetchTopFreeApps();
   }, [page, dispatch]);
 
+  const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
+
   return (
     <>
-      <Search handler={() => {}} />
+      <Search handler={searchHandler} searchTerm={searchTerm} />
       {loading ? (
         <Loading />
       ) : (

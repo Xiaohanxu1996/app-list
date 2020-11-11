@@ -4,6 +4,7 @@ import {
   SET_RECOMMAND_APP,
   SET_LOADED,
   LOAD_MORE,
+  SET_SEARCH_TERM,
 } from '@constants';
 
 const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
@@ -28,6 +29,13 @@ const Reducer = (state: StoreStateType, action: ActionType): StoreStateType => {
           loading: true,
         };
       }
+    }
+    case SET_SEARCH_TERM: {
+      const { term } = action;
+      return {
+        ...state,
+        searchTerm: term ? term : '',
+      };
     }
     case LOAD_MORE: {
       const { page } = state;

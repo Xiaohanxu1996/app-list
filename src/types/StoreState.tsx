@@ -15,6 +15,7 @@ interface StoreStateType {
 interface ActionType {
   type: string;
   data: AppInfoType[];
+  term?: string;
 }
 
 interface ActionWithOutDataType {
@@ -26,7 +27,6 @@ interface AppInfoType {
   name: string;
   genre: string;
   imageUrl: string;
-  ranking: number;
 }
 
 export { Theme };

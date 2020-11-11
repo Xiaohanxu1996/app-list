@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import classnames from 'classnames';
 // import { MdSearch } from 'react-icons/md';
 
 export interface Props {
-  value?: string;
-  handler: () => void;
+  searchTerm?: string;
+  handler: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Search = ({ handler, value = '' }: Props) => {
+const Search = ({ handler, searchTerm = '' }: Props) => {
   return (
     <div className={classnames('c-search-container')}>
       {/* <div className={classnames('c-search-icon-container')}>
@@ -17,7 +17,7 @@ const Search = ({ handler, value = '' }: Props) => {
         <input
           className={classnames('c-search-input')}
           onChange={handler}
-          value={value}
+          value={searchTerm}
           placeholder={'搜索'}
         />
       </div>

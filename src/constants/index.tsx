@@ -3,4 +3,5 @@ export {
   SET_RECOMMAND_APP,
   SET_LOADED,
   LOAD_MORE,
+  SET_SEARCH_TERM,
 } from './action';
