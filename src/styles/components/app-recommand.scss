@@ -1,7 +1,7 @@
 .c-recommand {
-  border-bottom: $bordersize solid map-get($map: $color, $key: cl-gray-03);
   margin-top: 3rem;
   padding: map-get($map: $spacing, $key: lg-02) 0;
+  border-bottom: $bordersize solid map-get($map: $color, $key: cl-gray-02);
 }
 
 .c-recommand-header {
@@ -9,6 +9,7 @@
   margin-bottom: map-get($map: $spacing, $key: lg-01);
   margin-left: map-get($map: $spacing, $key: md-02);
 }
+
 .c-recommand-container {
   display: flex;
   flex-wrap: nowrap;
