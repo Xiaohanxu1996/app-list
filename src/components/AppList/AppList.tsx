@@ -7,6 +7,7 @@ import { getApps } from '@api';
 import { setFreeApp, loadMore } from '@action';
 import { appInfoParser } from '@util';
 import { useVisibility } from '@hooks';
+import { AppInfoType } from '@types';
 import AppListItem from './AppListItem';
 
 const AppList: React.FunctionComponent = () => {
@@ -54,6 +55,17 @@ const AppList: React.FunctionComponent = () => {
     fetchTopFreeApps();
   }, [page, dispatch]);
 
+  const setAnchor = (list: AppInfoType[], app: AppInfoType): boolean => {
+    if (list.length >= 2 && app.id === list[list.length - 2].id) {
+      return true;
+    }
+    if (list.length === 1) {
+      return true;
+    }
+
+    return false;
+  };
+
   return (
     <ul className={classnames('c-applist')}>
       <Grid container>
@@ -71,9 +83,7 @@ const AppList: React.FunctionComponent = () => {
             <Grid key={`${id}-${ranking}`} item sm={12} md={4}>
               <AppListItem
                 ref={
-                  topFreeApps[topFreeApps.length - 1].id === app.id
-                    ? lastItem
-                    : null
+                  setAnchor(topFreeApps, app) ? lastItem : null
                   //  load next page when last item is visible
                 }
                 {...appInfo}
