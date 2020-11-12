@@ -32,7 +32,6 @@
   box-sizing: border-box;
   height: 1.5rem;
   width: 100%;
-  padding: 0 0.2rem;
   padding: 0 map-get($map: $spacing, $key: sm-02);
   border-radius: map-get($map: $borderradius, $key: sm);
   font-size: map-get($map: $fontsize, $key: sm-02);
