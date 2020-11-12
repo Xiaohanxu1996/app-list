@@ -1,6 +1,5 @@
 //abstracts
 @import 'abstracts/variables.scss';
-
 // base
 @import 'base/img.scss';
 @import 'base/list.scss';
@@ -10,6 +9,9 @@
 @import 'components/app-list-item.scss';
 @import 'components/app-recommand.scss';
 @import 'components/loading.scss';
+
+//animation on scroll
+@import 'aos/dist/aos.css';
 
 @media (prefers-color-scheme: dark) {
   body {

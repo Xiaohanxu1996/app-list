@@ -39,7 +39,7 @@ const AppListItem: React.ForwardRefExoticComponent<ListItemProps> = React.forwar
       fetchData(id);
     }, [id]);
     return (
-      <li className={classnames('c-applist-item')} ref={ref}>
+      <li data-aos="fade-up" className={classnames('c-applist-item')} ref={ref}>
         <div className={classnames('c-applist-item-ranking')}>
           {appInfo.ranking}
         </div>
