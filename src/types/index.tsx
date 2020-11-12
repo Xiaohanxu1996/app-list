@@ -1,6 +1,8 @@
+export type { StoreStateType } from './StoreState';
+
 export type {
-  StoreStateType,
   ActionType,
   AppInfoType,
   ActionWithOutDataType,
-} from './StoreState';
+  ActionWithStringDataType,
+} from './action';

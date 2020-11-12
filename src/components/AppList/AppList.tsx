@@ -9,7 +9,7 @@ import { appInfoParser } from '@util';
 import { useVisibility } from '@hooks';
 import AppListItem from './AppListItem';
 
-const AppList = () => {
+const AppList: React.FunctionComponent = () => {
   const { state, dispatch } = useContext(Context);
   const { topFreeApps, page, searchTerm } = state;
   const [listSize, setListSize] = useState(0);

@@ -1,11 +1,10 @@
 import React, { ChangeEvent } from 'react';
 import classnames from 'classnames';
-// import { MdSearch } from 'react-icons/md';
 
-export interface Props {
-  searchTerm?: string;
+type Props = {
+  searchTerm: string;
   handler: (e: ChangeEvent<HTMLInputElement>) => void;
-}
+};
 
 const Search = ({ handler, searchTerm = '' }: Props) => {
   return (

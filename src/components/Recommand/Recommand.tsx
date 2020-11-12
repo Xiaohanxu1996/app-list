@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Context } from '@store';
 import RecommandItem from './RecommandItem';
 
-const Recommand = () => {
+const Recommand: React.FC = () => {
   const { state } = useContext(Context);
   const { topGrowApps, searchTerm } = state;
   const [filteredResult, setfilteredResult] = useState(topGrowApps);

@@ -5,14 +5,14 @@ import classnames from 'classnames';
 import { getAppDetail } from '@api';
 import { isEven } from '@util';
 
-interface ListItemProps {
+type ListItemProps = {
   name: string;
   genre: string;
   imageUrl: string;
   ranking: number;
   id: string;
   ref?: React.Ref<HTMLLIElement>;
-}
+};
 
 const AppListItem: React.ForwardRefExoticComponent<ListItemProps> = React.forwardRef(
   (props, ref: React.Ref<HTMLLIElement>) => {

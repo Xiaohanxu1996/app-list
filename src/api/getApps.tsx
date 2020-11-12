@@ -1,14 +1,12 @@
 const { REACT_APP_APIURL: apiURL } = process.env;
 
-const getApps = async ({
-  page,
-  size,
-  type,
-}: {
+type getAppsArg = {
   page: number;
   size: number;
   type: string;
-}) => {
+};
+
+const getApps = async ({ page, size, type }: getAppsArg) => {
   const total = page * size;
   const response = await fetch(`${apiURL}/${type}/all/${total}/explicit.json`);
   if (!response.ok) {

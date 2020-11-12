@@ -1,3 +1,5 @@
+import { AppInfoType } from './action';
+
 interface StoreStateType {
   topGrowApps: AppInfoType[];
   topFreeApps: AppInfoType[];
@@ -6,21 +8,4 @@ interface StoreStateType {
   page: number;
 }
 
-interface ActionType {
-  type: string;
-  data: AppInfoType[];
-  term?: string;
-}
-
-interface ActionWithOutDataType {
-  type: string;
-}
-
-interface AppInfoType {
-  id: string;
-  name: string;
-  genre: string;
-  imageUrl: string;
-}
-
-export type { StoreStateType, ActionType, AppInfoType, ActionWithOutDataType };
+export type { StoreStateType };
