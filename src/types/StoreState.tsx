@@ -1,15 +1,9 @@
-enum Theme {
-  Dark = 'Dark',
-  Light = 'Light',
-}
-
 interface StoreStateType {
   topGrowApps: AppInfoType[];
   topFreeApps: AppInfoType[];
   loading: boolean;
   searchTerm: string;
   page: number;
-  theme: Theme;
 }
 
 interface ActionType {
@@ -29,5 +23,4 @@ interface AppInfoType {
   imageUrl: string;
 }
 
-export { Theme };
 export type { StoreStateType, ActionType, AppInfoType, ActionWithOutDataType };

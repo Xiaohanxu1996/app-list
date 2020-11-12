@@ -10,9 +10,6 @@ export interface Props {
 const Search = ({ handler, searchTerm = '' }: Props) => {
   return (
     <div className={classnames('c-search-container')}>
-      {/* <div className={classnames('c-search-icon-container')}>
-        <MdSearch className={classnames('c-search-icon')} />
-      </div> */}
       <div className={classnames('c-search-input-container')}>
         <input
           className={classnames('c-search-input')}

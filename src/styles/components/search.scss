@@ -8,29 +8,15 @@
   align-items: center;
   height: auto;
   width: 100%;
-  background-color: white;
-  border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
+  background-color: map-get($map: $color, $key: cl-white);
+  border-bottom: $bordersize solid map-get($map: $color, $key: cl-gray-03);
 }
 
 @media (prefers-color-scheme: dark) {
   .c-search-container {
-    background-color: #474047;
-    border-bottom: 0;
-    border-bottom: 1px solid map-get($map: $color, $key: cl-gray-02);
+    background-color: map-get($map: $color, $key: cl-gray-06);
+    border-bottom: $bordersize solid map-get($map: $color, $key: cl-gray-02);
   }
-}
-
-.c-search-icon-container {
-  display: inline-flex;
-  height: 24px;
-  width: 24px;
-  color: #9d9fb0;
-  font-size: 14px;
-  font-weight: bolder;
-}
-.c-search-icon {
-  height: 100%;
-  width: 100%;
 }
 
 .c-search-input-container {
@@ -41,12 +27,13 @@
 }
 
 .c-search-input {
-  height: 24px;
-  width: 100%;
-  border: none;
-  padding: 0;
-  border-radius: 0.25rem;
   background-color: map-get($map: $color, $key: cl-gray-04);
-  color: #9d9fb0;
+  color: map-get($map: $color, $key: cl-gray-07);
+  box-sizing: border-box;
+  height: 1.5rem;
+  width: 100%;
+  padding: 0 0.2rem;
+  padding: 0 map-get($map: $spacing, $key: sm-02);
+  border-radius: map-get($map: $borderradius, $key: sm);
   font-size: map-get($map: $fontsize, $key: sm-02);
 }

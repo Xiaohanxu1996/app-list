@@ -1,7 +1,4 @@
 // Colors
-$color-black: #000;
-$color-gray-01: #858585;
-
 $color: (
   cl-black: #000,
   cl-gray-01: #ebebeb,
@@ -9,13 +6,13 @@ $color: (
   cl-gray-03: #dcdcdc,
   cl-gray-04: #e2e3e4,
   cl-gray-05: #39333a,
+  cl-gray-06: #474047,
+  cl-gray-07: #9d9fb0,
   cl-orange: #fd9627,
   cl-white: #fff,
 );
 
 //Font Family
-
-$font: 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
 $font: (
   primary: system-ui,
   secondary: "'HelveticaNeue', 'Helvetica', 'Arial', sans-serif",
@@ -44,7 +41,6 @@ $fontweight: (
 //Spacing
 $spacing: 1rem;
 $spacing: (
-  0: 0,
   sm-01: (
     $spacing * 0.125,
   ),
@@ -68,9 +64,8 @@ $spacing: (
   ),
 );
 
-// border radius
-
-$borderradius: 0.2rem;
+// border
+$bordersize: 0.0725rem;
 $borderradius: (
   sm: 0.2rem,
   md: 20%,

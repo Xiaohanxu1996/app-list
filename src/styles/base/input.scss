@@ -1,6 +1,7 @@
 // overwrite agent style for input placeholder
 input:focus {
   outline: none;
+  border: none;
 }
 
 ::-webkit-input-placeholder {

@@ -1,7 +1,9 @@
 //abstracts
 @import 'abstracts/variables.scss';
+@import 'abstracts/overwrite.scss';
 
 // base
+@import 'base/body.scss';
 @import 'base/img.scss';
 @import 'base/list.scss';
 @import 'base/input.scss';
@@ -14,30 +16,3 @@
 
 //animation on scroll
 @import 'aos/dist/aos.css';
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: map-get($map: $color, $key: cl-gray-05);
-    color: map-get($map: $color, $key: cl-white);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background: map-get($map: $color, $key: cl-white);
-    color: map-get($map: $color, $key: cl-black);
-  }
-}
-
-//overwrite material ui style
-.MuiRating-iconEmpty {
-  color: map-get($map: $color, $key: cl-orange) !important;
-}
-
-.MuiRating-sizeSmall {
-  font-size: 1rem !important;
-}
-
-.MuiGrid-item {
-  width: 100%;
-}

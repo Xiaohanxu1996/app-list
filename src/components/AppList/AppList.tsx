@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Fuse from 'fuse.js';
 import { Grid } from '@material-ui/core';
 import classnames from 'classnames';
+import Fuse from 'fuse.js';
 import { Context } from '@store';
 import { getApps } from '@api';
 import { setFreeApp, loadMore } from '@action';

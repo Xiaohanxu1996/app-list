@@ -1,13 +1,7 @@
 .c-recommand {
-  border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
+  border-bottom: $bordersize solid map-get($map: $color, $key: cl-gray-03);
   margin-top: 3rem;
   padding: map-get($map: $spacing, $key: lg-02) 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  .c-recommand {
-    border-bottom: 1px solid map-get($map: $color, $key: cl-gray-02);
-  }
 }
 
 .c-recommand-header {
@@ -44,6 +38,7 @@
 .c-recommand-item-info {
   margin: 0 map-get($map: $spacing, $key: md-02);
 }
+
 .c-recommand-item-name {
   overflow: hidden;
   white-space: nowrap;

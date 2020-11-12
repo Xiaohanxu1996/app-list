@@ -1,5 +1,5 @@
-import React, { createContext, useReducer, FunctionComponent } from 'react';
-import { StoreStateType, Theme } from '@types';
+import React, { createContext, useReducer } from 'react';
+import { StoreStateType } from '@types';
 import { Reducer } from '@reducers';
 
 const initialState = {
@@ -8,7 +8,6 @@ const initialState = {
   loading: true,
   page: 1,
   searchTerm: '',
-  theme: Theme.Dark,
 };
 
 const Context = createContext<{
@@ -16,7 +15,7 @@ const Context = createContext<{
   dispatch: React.Dispatch<any>;
 }>({ state: initialState, dispatch: () => null });
 
-const Store: FunctionComponent = ({ children }) => {
+const Store: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
   return (
     <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>

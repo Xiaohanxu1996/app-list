@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 interface recommandInfoType {
@@ -7,7 +7,7 @@ interface recommandInfoType {
   imageUrl: string;
 }
 
-const RecommandItem: FunctionComponent<recommandInfoType> = (props) => {
+const RecommandItem: React.FC<recommandInfoType> = (props) => {
   const { name, genre, imageUrl } = props;
 
   return (
