@@ -1,8 +1,10 @@
 //abstracts
 @import 'abstracts/variables.scss';
+
 // base
 @import 'base/img.scss';
 @import 'base/list.scss';
+@import 'base/input.scss';
 
 //components
 @import 'components/search.scss';
@@ -38,27 +40,4 @@
 
 .MuiGrid-item {
   width: 100%;
-}
-
-// overwrite agent style for input placeholder
-input:focus {
-  outline: none;
-}
-
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  text-align: center;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  text-align: center;
-}
-
-:-ms-input-placeholder {
-  text-align: center;
 }
