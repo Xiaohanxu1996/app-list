@@ -12,6 +12,14 @@
   border-bottom: 1px solid map-get($map: $color, $key: cl-gray-03);
 }
 
+@media (prefers-color-scheme: dark) {
+  .c-search-container {
+    background-color: #474047;
+    border-bottom: 0;
+    border-bottom: 1px solid map-get($map: $color, $key: cl-gray-02);
+  }
+}
+
 .c-search-icon-container {
   display: inline-flex;
   height: 24px;

@@ -6,6 +6,12 @@
   border-bottom: 1px solid map-get($map: $color, $key: cl-gray-01);
 }
 
+@media (prefers-color-scheme: dark) {
+  .c-applist-item {
+    border-bottom: 1px solid map-get($map: $color, $key: cl-gray-02);
+  }
+}
+
 .c-applist-item-ranking {
   display: flex;
   align-items: center;

@@ -3,6 +3,13 @@
   margin-top: 3rem;
   padding: map-get($map: $spacing, $key: lg-02) 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  .c-recommand {
+    border-bottom: 1px solid map-get($map: $color, $key: cl-gray-02);
+  }
+}
+
 .c-recommand-header {
   font-family: map-get($map: $font, $key: primary);
   margin-bottom: map-get($map: $spacing, $key: lg-01);
